@@ -3,9 +3,9 @@
 using namespace std;
 int main()
 {
-    int a[40], straz=1, temp, i, d[40], e[40];
+    int a[40], key=1, temp, i, d[40], e[40];
     srand((unsigned) time(nullptr));
-    cout<<"Przed sortowaniem"<<'\n';
+    cout<<"Before sort"<<'\n';
     for (i = 0; i < 40; ++i) {
         a[i]=rand()%90+10;
         cout<<a[i]<<'\t';
@@ -20,9 +20,9 @@ int main()
             d[i]=-1;
         }
     }
-    while(straz==1)
+    while(key==1)
     {
-        straz=0;
+        key=0;
         for(i = 1; i < 40; ++i)
         {
             if(d[i-1]>d[i])
@@ -30,18 +30,18 @@ int main()
                 temp=d[i-1];
                 d[i-1]=d[i];
                 d[i]=temp;
-                straz=1;
+                key=1;
             }
             if(e[i-1]>e[i])
             {
                 temp=e[i-1];
                 e[i-1]=e[i];
                 e[i]=temp;
-                straz=1;
+                key=1;
             }
         }
     }
-    cout<<'\n'<<'\n'<<"Po sortowaniu"<<'\n';
+    cout<<'\n'<<'\n'<<"After sort"<<'\n';
     for (i = 0; i < 40; ++i) {
         if(d[i]!=-1) {
             cout << d[i] << '\t';
